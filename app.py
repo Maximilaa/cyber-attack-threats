@@ -20,14 +20,14 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("⚙️ Threat Parameters")
-    flow_duration = st.number_input("Flow Duration (ms)", value=0.0, help="e.g. 1520")
-    packet_size = st.number_input("Packet Size (bytes)", value=0.0, help="e.g. 64")
-    flow_bytes = st.number_input("Flow Bytes/s", value=0.0, help="e.g. 1024")
-    flow_packets = st.number_input("Flow Packets/s", value=0.0, help="e.g. 50")
-    cpu_util = st.number_input("CPU Utilization (%)", value=0.0, help="e.g. 45")
-    mem_util = st.number_input("Memory Utilization (%)", value=0.0, help="e.g. 65")
-    anomaly_index = st.number_input("Anomaly Severity Index", value=0.0, help="e.g. 3.4")
-    normalized_flow = st.number_input("Normalized Packet Flow", value=0.0, help="e.g. 0.85")
+   flow_duration = st.number_input("Flow Duration (ms)", min_value=0.0, max_value=1000000.0, help="e.g. 1520")
+    packet_size = st.number_input("Packet Size (bytes)", min_value=32.0, max_value=1514.0, help="e.g. 64")
+    flow_bytes = st.number_input("Flow Bytes/s", min_value=0.0, max_value=950000.0, help="e.g. 1024")
+    flow_packets = st.number_input("Flow Packets/s", min_value=0.0, max_value=2000.0, help="e.g. 50")
+    cpu_util = st.number_input("CPU Utilization (%)", min_value=0.0, max_value=100.0, help="e.g. 45")
+    mem_util = st.number_input("Memory Utilization (%)", min_value=0.0, max_value=100.0, help="e.g. 65")
+    anomaly_index = st.number_input("Anomaly Severity Index", min_value=0.0, max_value=10.0, help="e.g. 3.4")
+    normalized_flow = st.number_input("Normalized Packet Flow", min_value=0.0, max_value=1.0, help="e.g. 0.85")
     attack_severity = st.selectbox("Attack Severity (as input feature)", [0, 1, 2], format_func=lambda x: ["Low", "Medium", "High"][x])
 
     if st.button("⚡ Predict Cyber Attack"):
