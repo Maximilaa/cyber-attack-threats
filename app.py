@@ -26,7 +26,7 @@ with col1:
     flow_packets = st.number_input("Flow Packets/s [0 - 2,000]", min_value=0.0, max_value=2000.0, help="e.g. 50")
     cpu_util = st.number_input("CPU Utilization (%) [0 - 100]", min_value=0.0, max_value=100.0, help="e.g. 45")
     mem_util = st.number_input("Memory Utilization (%) [0 - 100]", min_value=0.0, max_value=100.0, help="e.g. 65")
-    anomaly_index = st.number_input("Anomaly Severity Index [0 - 10]", min_value=0.0, max_value=10.0, help="e.g. 3.4")
+    anomaly_index = st.number_input("Anomaly Severity Index [0 - 10]", min_value=0.0, max_value=100.0, help="e.g. 3.4")
     normalized_flow = st.number_input("Normalized Packet Flow [0 - 1.0]", min_value=0.0, max_value=1.0, help="e.g. 0.85")
     attack_severity = st.selectbox("Attack Severity (as input feature)", [0, 1, 2], format_func=lambda x: ["Low", "Medium", "High"][x])
 
