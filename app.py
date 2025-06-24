@@ -20,7 +20,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("⚙️ Threat Parameters")
-   flow_duration = st.number_input("Flow Duration (ms)", min_value=0.0, max_value=1000000.0, help="e.g. 1520")
+    flow_duration = st.number_input("Flow Duration (ms)", min_value=0.0, max_value=1000000.0, help="e.g. 1520")
     packet_size = st.number_input("Packet Size (bytes)", min_value=32.0, max_value=1514.0, help="e.g. 64")
     flow_bytes = st.number_input("Flow Bytes/s", min_value=0.0, max_value=950000.0, help="e.g. 1024")
     flow_packets = st.number_input("Flow Packets/s", min_value=0.0, max_value=2000.0, help="e.g. 50")
