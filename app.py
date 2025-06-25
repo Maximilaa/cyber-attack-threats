@@ -43,6 +43,17 @@ with col1:
             st.subheader("Prediction Result")
             st.success(f"Predicted Threat Label: **{['Normal', 'Attack'][prediction]}**")
 
+            if prediction == 1:
+                st.warning("⚠️ Recommended Actions:")
+                st.markdown("""
+                - **Disconnect immediately** from suspicious network sources or systems.
+                - **Check system logs** for unusual activity matching the time of attack.
+                - **Run antivirus or intrusion detection scans** on the system.
+                - **Notify your IT/security team** to perform deeper investigation.
+                - **Isolate affected devices** to prevent spread if attack seems severe.
+                - **Ensure backups** are up to date in case data recovery is needed.
+                """)
+
             st.subheader("Confidence Metrics")
             fig, ax = plt.subplots()
             sns.barplot(x=["Normal", "Attack"], y=prediction_proba[:2], palette="coolwarm", ax=ax)
